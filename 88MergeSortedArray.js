@@ -33,6 +33,8 @@
 // Note that because m = 0, there are no elements in nums1. The 0 is only there
 // to ensure the merge result can fit in nums1.
 
+// This is my first attempt at solving the problem... It uses an extra buffer, and
+// then copies the contents of that buffer back into the nums1 array.
 var merge1 = function (nums1, m, nums2, n) {
   const total = m + n;
   const ret = [];
@@ -55,10 +57,10 @@ var merge1 = function (nums1, m, nums2, n) {
     nums1[i] = ret[i];
   }
   return nums1;
-}
+};
 
-
-
+// This is my second attempt. It does not allocate any extra memory because it processes
+// the arrays in reverse order to avoid overwriting unprocessed data in nums1
 var merge = function (nums1, m, nums2, n) {
   let x = m - 1;
   let y = n - 1;
@@ -74,19 +76,19 @@ var merge = function (nums1, m, nums2, n) {
     }
     z--;
   }
-}
+};
 
-let test1nums1 = [1,2,3,0,0,0];
-let test1nums2 = [2,5,6];
+let test1nums1 = [1, 2, 3, 0, 0, 0];
+let test1nums2 = [2, 5, 6];
 merge(test1nums1, 3, test1nums2, 3);
 console.log(test1nums1);
 
 let test2nums1 = [1];
 let test2nums2 = [];
-merge(test2nums1, 1, test2nums2, 0)
+merge(test2nums1, 1, test2nums2, 0);
 console.log(test2nums1);
 
 let test3nums1 = [0];
 let test3nums2 = [1];
-merge(test3nums1, 0, test3nums2, 1)
+merge(test3nums1, 0, test3nums2, 1);
 console.log(test3nums1);
