@@ -55,7 +55,47 @@
 
 /**
  * @param {Array} arr
- * @param {number} depth
+ * @param {number} n
  * @return {Array}
  */
-var flat = function (arr, n) {};
+var flat = function (arr, n) {
+  let ret = new Array();
+  rec(arr, n, ret);
+  return ret;
+};
+
+/**
+ * @param {Array} arr
+ * @param {number} n
+ * @param {Array} out
+ */
+function rec(arr, n, out) {
+  if (n > 0) {
+    arr.forEach((element) => {
+      if (Array.isArray(element)) {
+        rec(element, n - 1, out);
+      } else {
+        out.push(element);
+      }
+    });
+  } else {
+    arr.forEach((element) => out.push(element));
+  }
+}
+
+console.log("Example 1");
+
+let arr = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]];
+let n = 0;
+let result = flat(arr, n);
+console.log(result);
+
+console.log("Example 2");
+n = 1;
+result = flat(arr, n);
+console.log(result);
+
+console.log("Example 3");
+n = 2;
+result = flat(arr, n);
+console.log(result);
