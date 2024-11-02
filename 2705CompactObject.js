@@ -66,7 +66,29 @@ var compactObject = function (obj) {
   return obj;
 };
 
-function recArray(out, arr) {}
+var compactObjectFunc = function (obj) {
+  if (obj === null) {
+    return null;
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.filter(Boolean).map(compactObject);
+  }
+
+  if (typeof obj !== "object") {
+    return obj;
+  }
+
+  const ret = {};
+  for (const key in obj) {
+    const value = obj[key];
+    const v = compactObject(value);
+    if (v) {
+      ret[key] = v;
+    }
+  }
+  return ret;
+};
 
 console.log("Example 1");
 let obj = [null, 0, false, 1];
