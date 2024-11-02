@@ -85,7 +85,6 @@
 //
 
 class EventEmitter {
-  #next = 0;
   #eventMap = new Map();
   /**
    * @param {string} eventName
@@ -95,21 +94,14 @@ class EventEmitter {
   subscribe(eventName, callback) {
     let callbacks = this.#eventMap.get(eventName);
     if (callbacks === undefined) {
-      callbacks = [];
+      callbacks = new Set();
       this.#eventMap.set(eventName, callbacks);
     }
-    const c = {
-      id: this.#next++,
-      callback: callback,
-    };
-    callbacks.push(c);
+    callbacks.add(callback);
 
     return {
       unsubscribe: () => {
-        const index = callbacks.findIndex((item) => item.id === c.id);
-        if (index !== -1) {
-          callbacks.splice(index, 1);
-        }
+        callbacks.delete(callback);
       },
     };
   }
@@ -123,8 +115,8 @@ class EventEmitter {
     const callbacks = this.#eventMap.get(eventName);
     const ret = [];
     if (callbacks) {
-      callbacks.forEach((c) => {
-        const result = c.callback(...args);
+      callbacks.forEach((callback) => {
+        const result = callback(...args);
         ret.push(result);
       });
     }
