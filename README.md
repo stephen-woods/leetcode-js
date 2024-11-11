@@ -15,6 +15,7 @@ This is a repository of solutions to various [LeetCode](http://leetcode.com) cha
 - [55. Jump Game](./55JumpGame.js)
 - [45. Jump Game II](./45JumpGameII.js)
 - [274. H-Index](./274HIndex.js)
+- [380. Insert Delete GetRandom O(1)](./380InsertDeleteGetRandomO1.js)
 
 ## 30 Days of JavaScript
 
