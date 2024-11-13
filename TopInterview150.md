@@ -14,3 +14,9 @@
 - [45. Jump Game II](./js/45JumpGameII.js)
 - [274. H-Index](./js/274HIndex.js)
 - [380. Insert Delete GetRandom O(1)](./js/380InsertDeleteGetRandomO1.js)
+
+## Two Pointers
+
+- [125. Valid Palindrome](./js/125ValidPalindrome.js)
+- [392. Is Subsequence](./js/392IsSubsequence.js)
+- [167. Two Sum II - Input Array is Sorted](./js/167TwoSumII-InputArrayIsSorted.js)
