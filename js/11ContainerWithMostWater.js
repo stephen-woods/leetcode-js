@@ -24,8 +24,8 @@
  * @return {number}
  */
 var maxArea = function (height) {
-  let x = 0;
   let y = height.length - 1;
+  let x = 0;
   let max = 0;
 
   while (x != y) {
