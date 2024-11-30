@@ -89,6 +89,7 @@ var findSubstring = function (s, words) {
  * @param {number} numWords
  * @param {number} wordLength
  * @param {Map<string, number>} wordsFreq
+ * @returns {boolean}
  */
 function isConcatenation(s, start, concatLength, wordLength, wordsFreq) {
   const chunkFreq = new Map();
@@ -112,17 +113,17 @@ let s;
 let words;
 let answer;
 
-// (s = "barfoothefoobarman"), (words = ["foo", "bar"]);
-// answer = findSubstring(s, words);
-// console.log(answer);
-//
-// (s = "wordgoodgoodgoodbestword"), (words = ["word", "good", "best", "word"]);
-// answer = findSubstring(s, words);
-// console.log(answer);
-//
-// (s = "barfoofoobarthefoobarman"), (words = ["bar", "foo", "the"]);
-// answer = findSubstring(s, words);
-// console.log(answer);
+(s = "barfoothefoobarman"), (words = ["foo", "bar"]);
+answer = findSubstring(s, words);
+console.log(answer);
+
+(s = "wordgoodgoodgoodbestword"), (words = ["word", "good", "best", "word"]);
+answer = findSubstring(s, words);
+console.log(answer);
+
+(s = "barfoofoobarthefoobarman"), (words = ["bar", "foo", "the"]);
+answer = findSubstring(s, words);
+console.log(answer);
 
 (s = "wordgoodgoodgoodbestword"), (words = ["word", "good", "best", "good"]);
 answer = findSubstring(s, words);
