@@ -27,3 +27,7 @@
 - [209. Minimum Size Subarray Sum](./js/209MinimumSizeSubarraySum.js)
 - [3. Longest Substring Without Repeating Characters](./js/3LongestSubstringWithoutRepeatingCharacters.js)
 - [30. Substring With Concatenation Of All Words](./js/30SubstringWithConcatenationOfAllWords.js)
+
+## Matrix
+
+- [36. Valid Sudoku](./js/36ValidSudoku.js)
