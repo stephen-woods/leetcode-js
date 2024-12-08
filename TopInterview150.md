@@ -31,3 +31,7 @@
 ## Matrix
 
 - [36. Valid Sudoku](./js/36ValidSudoku.js)
+
+## Hashmap
+
+- [383. Ransom Note](.js/383RansomNote.js)
